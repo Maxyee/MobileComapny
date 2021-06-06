@@ -37,7 +37,35 @@ visit this website: https://hub.docker.com/
 ## How to stop a specific container in docker
 
 `sudo docker stop CONTAINERID`
+or
+`sudo docker stop NAMES`
 
 ## Exposing Multiple port in docker
 
 `sudo docker run -d -p portIwant:container-port -p anotherPortIWant:container-port imagename:tagname`
+
+## All the docker container list history
+
+`sudo docker ps -a`
+
+## How to delete a container
+
+`sudo docker rm ContainerID`
+
+## How to find all the container id list
+
+`sudo docker ps -aq`
+
+## How to delete all the stopped container
+
+`sudo docker rm $(docker ps -aq)`
+
+## How to delete all container either running or stopped
+
+`sudo docker rm -f $(docker ps -aq)`
+
+## How to set a docker container name when It is about to run
+
+`sudo docker run --name giveThename -d -p port-I-want:container-port imagename:tagname`
+
+## How to share volums between Host and Container in docker
